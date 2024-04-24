@@ -1,5 +1,5 @@
 import { useState } from "react";
-import dummyData from "../../dummyData/accordian";
+import dummyData from "./dummyData/accordian";
 
 function Accordian() {
   const [selected, setSelected] = useState(null);
@@ -21,10 +21,10 @@ function Accordian() {
   };
   return (
     <div>
-      <div className="w-screen grid place-items-center bg-gray-900 h-screen">
+      <div className="w-full grid place-items-center bg-gray-900 h-screen">
         <div className="flex flex-col justify-center items-center w-96">
           <div className="flex flex-col items-center gap-3 mb-4">
-            <h1 className="text-white text-center  font-cascadia font-bold">
+            <h1 className="text-white text-center  font-cascadiaSemiBold">
               Accordian
             </h1>
             <button
@@ -36,7 +36,7 @@ function Accordian() {
                     }
                   : () => setEnableMultiSelection(!enableMultiSelection)
               }
-              className="bg-orange-600 rounded-full p-2"
+              className="bg-purple-300 rounded-full p-2 font-cascadiaRegular text-sm text-black"
             >
               Multi Selection{" "}
               {enableMultiSelection || enableMultiSelection ? "ON " : "OFF "}
