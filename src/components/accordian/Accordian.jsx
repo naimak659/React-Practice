@@ -7,11 +7,9 @@ function Accordian() {
   const [multiSelection, setMultiSelection] = useState([]);
 
   const handleSingleSelection = (currentID) => {
-    console.log(`handleSingleSelection ${currentID}`);
     setSelected(currentID === selected ? null : currentID);
   };
   const handleMultiSelection = (currentID) => {
-    console.log(`handleMultiSelection ${currentID}`);
     let arr = multiSelection;
     let findIndex = arr.indexOf(currentID);
     console.log(arr);
@@ -44,9 +42,9 @@ function Accordian() {
           </div>
 
           <div className="grid grid-cols-1 gap-2 duration-300 ">
-            {dummyData.map((dataItem) => {
+            {dummyData.map((dataItem, i) => {
               return (
-                <div className="space-y-2">
+                <div className={`space-y-2 `}>
                   <div
                     onClick={() => {
                       handleMultiSelection(dataItem.id);
@@ -57,19 +55,31 @@ function Accordian() {
                     <h2 className="font-cascadiaBold text-sm">
                       {dataItem.question}
                     </h2>
-                    <span className="bg-slate-900 rounded-full w-6 h-6 text-center align-middle leading-none text-lg">
+                    <span className="bg-slate-900 rounded-full w-6 h-6 text-center align-middle leading-none text-lg font-bold">
                       {selected === dataItem.id ? "-" : "+"}
                     </span>
                   </div>
-                  <div>
+                  <div
+                    key={i}
+                    className={`duration-300 ${
+                      selected == dataItem.id ||
+                      multiSelection.indexOf(dataItem.id) !== -1
+                        ? "scale-100"
+                        : "scale-0"
+                    } `}
+                  >
                     {enableMultiSelection
                       ? multiSelection.indexOf(dataItem.id) !== -1 && (
-                          <div className="bg-purple-300 text-black font-cascadiaLight text-xs font-bold px-3 py-2 rounded">
+                          <div
+                            className={`bg-purple-300  text-black font-cascadiaLight text-xs font-bold px-3 py-2 rounded duration-700 `}
+                          >
                             {dataItem.answer}
                           </div>
                         )
                       : selected === dataItem.id && (
-                          <div className="bg-purple-300 text-black font-cascadiaLight text-xs font-bold px-3 py-2 rounded">
+                          <div
+                            className={`bg-purple-300  text-black font-cascadiaLight text-xs font-bold px-3 py-2 rounded duration-700`}
+                          >
                             {dataItem.answer}
                           </div>
                         )}
