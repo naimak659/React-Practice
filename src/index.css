@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "cascadiaCode-bold";
+  src: url("/public/Fonts/CascadiaCode-Bold.ttf");
+}
+
+@font-face {
+  font-family: "cascadiaCode-light";
+  src: url("/public/Fonts/CascadiaCode-Light.ttf");
+}
+
+@font-face {
+  font-family: "cascadiaCode-regular";
+  src: url("/public/Fonts/CascadiaCode-Regular.ttf");
+}
+
+@font-face {
+  font-family: "cascadiaCode-semiBold";
+  src: url("/public/Fonts/CascadiaCode-SemiBold.ttf");
+}
