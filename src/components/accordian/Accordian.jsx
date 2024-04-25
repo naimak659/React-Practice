@@ -10,12 +10,20 @@ function Accordian() {
     setSelected(currentID === selected ? null : currentID);
   };
   const handleMultiSelection = (currentID) => {
-    let arr = multiSelection;
-    let findIndex = arr.indexOf(currentID);
-    console.log(arr);
-    if (findIndex == -1) arr.push(currentID);
-    else arr.splice(findIndex, 1);
-    setMultiSelection(arr);
+    setMultiSelection((prev) => {
+      const index = prev.indexOf(currentID);
+      if (index === -1) return [...prev, currentID];
+      else return prev.filter((id) => id !== currentID);
+    });
+    // let arr = multiSelection;
+    // let findIndex = arr.indexOf(currentID);
+    // console.log(arr);
+    // if (findIndex == -1) arr.push(currentID);
+    // else arr.splice(findIndex, 1);
+    // setMultiSelection(arr);
+  };
+  const toggleMultiSelecttion = () => {
+    setEnableMultiSelection((prev) => !prev);
   };
   return (
     <div>
@@ -29,8 +37,7 @@ function Accordian() {
               onClick={
                 enableMultiSelection
                   ? () => {
-                      handleMultiSelection();
-                      setEnableMultiSelection(!enableMultiSelection);
+                      toggleMultiSelecttion();
                     }
                   : () => setEnableMultiSelection(!enableMultiSelection)
               }

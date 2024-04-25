@@ -21,3 +21,8 @@
   font-family: "cascadiaCode-semiBold";
   src: url("/public/Fonts/CascadiaCode-SemiBold.ttf");
 }
+
+
+.active{
+  @apply text-orange-400 text-2xl
+}
