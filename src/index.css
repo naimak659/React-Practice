@@ -4,22 +4,22 @@
 
 @font-face {
   font-family: "cascadiaCode-bold";
-  src: url("/public/Fonts/CascadiaCode-Bold.ttf");
+  src: url("/Fonts/CascadiaCode-Bold.ttf");
 }
 
 @font-face {
   font-family: "cascadiaCode-light";
-  src: url("/public/Fonts/CascadiaCode-Light.ttf");
+  src: url("/Fonts/CascadiaCode-Light.ttf");
 }
 
 @font-face {
   font-family: "cascadiaCode-regular";
-  src: url("/public/Fonts/CascadiaCode-Regular.ttf");
+  src: url("/Fonts/CascadiaCode-Regular.ttf");
 }
 
 @font-face {
   font-family: "cascadiaCode-semiBold";
-  src: url("/public/Fonts/CascadiaCode-SemiBold.ttf");
+  src: url("/Fonts/CascadiaCode-SemiBold.ttf");
 }
 
 .active {

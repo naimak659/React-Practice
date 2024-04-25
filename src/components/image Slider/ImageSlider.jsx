@@ -30,12 +30,14 @@ function ImageSlider({ url, page = 10, limit = 5 }) {
       });
   }, [url, page, limit]);
 
+  // ! autometic Pagination but it has bug.
   // useEffect(() => {
   //   const slideInterval = setInterval(handleNext, 6000);
 
   //   return () => clearInterval(slideInterval);
 
   // }, [currentSlide]);
+  // ! END
 
   if (loading) {
     return (
