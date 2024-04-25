@@ -9,6 +9,7 @@ export default {
         cascadiaRegular: "cascadiaCode-regular",
         cascadiaSemiBold: "cascadiaCode-semiBold",
       },
+      
     },
   },
   plugins: [],

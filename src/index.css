@@ -22,7 +22,12 @@
   src: url("/public/Fonts/CascadiaCode-SemiBold.ttf");
 }
 
-
-.active{
-  @apply text-orange-400 text-2xl
+.active {
+  @apply text-orange-400;
+}
+.inActive {
+  @apply text-gray-50;
+}
+.imageSliderArrow {
+  @apply text-3xl text-purple-950 bg-purple-500 rounded-full cursor-pointer;
 }

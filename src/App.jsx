@@ -1,10 +1,8 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import Accordian from "./components/accordian/Accordian";
+// import Accordian from "./components/accordian/Accordian";
 import Navbar from "./components/Navbar";
-import StarRating from "./components/starRating/StarRating";
-
+// import StarRating from "./components/starRating/StarRating";
+import ImageSlider from "./components/image Slider/ImageSlider";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,7 +12,12 @@ function App() {
       <div className="text-white ">
         <Navbar />
         {/* <Accordian /> */}
-        <StarRating />
+        {/* <StarRating /> */}
+        <ImageSlider
+          url={`https://picsum.photos/v2/list`}
+          page={'6'}
+          limit={'5'}
+        />
       </div>
     </>
   );
