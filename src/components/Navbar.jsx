@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/src/assets/rounded-logo.png";
+import logo from "/src/assets/light-rounded-logo.svg";
 import { BsGithub } from "react-icons/bs";
 
 function Navbar() {
