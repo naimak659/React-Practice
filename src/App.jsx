@@ -1,16 +1,22 @@
 import { useState } from "react";
-// import Accordian from "./components/accordian/Accordian";
 import Navbar from "./components/Navbar";
+import Weather from "./components/Weather/Weather.jsx";
+
+// ! component's
+// import TreeView from "./components/Tree-view/TreeView.jsx";
+// import ScrollIndicator from "./components/Scroll-indicator/ScrollIndicator.jsx";
+// import Search from "./components/Search-AutoComplete/Search.jsx";
+// import Accordian from "./components/accordian/Accordian";
 // import StarRating from "./components/starRating/StarRating";
-import ImageSlider from "./components/image Slider/ImageSlider";
-import LoadMoreData from "./components/LoadMoreData/LoadMoreData";
+// import ImageSlider from "./components/image Slider/ImageSlider";
+// import LoadMoreData from "./components/LoadMoreData/LoadMoreData";
+// import QRcodegenerator from "./components/QR-code-generator/QRcodegenerator.jsx";
+// import GithubProfile from "./components/GithubUserProfile/GithubProfile.jsx";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div className="text-white ">
+      <div className="text-zinc-950 dark:text-white duration-700 bg-slate-100 dark:bg-gray-950 ">
         <Navbar />
         {/* <Accordian /> */}
         {/* <StarRating /> */}
@@ -19,7 +25,19 @@ function App() {
           page={'6'}
           limit={'5'}
         /> */}
-        <LoadMoreData url={`https://dummyjson.com/products?`} />
+        {/* <LoadMoreData url={`https://dummyjson.com/products?`} /> */}
+
+        {/* <TreeView /> */}
+
+        {/* <QRcodegenerator /> */}
+
+        {/* <GithubProfile /> */}
+
+        {/* <ScrollIndicator /> */}
+
+        {/* <Search /> */}
+
+        <Weather />
       </div>
     </>
   );
