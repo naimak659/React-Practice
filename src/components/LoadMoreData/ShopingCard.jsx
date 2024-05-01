@@ -22,7 +22,7 @@ function ShopingCard({ shopcard }) {
                       ${val.price}.99
                     </p>
                   </div>
-                  <p className="block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75">
+                  <p className="block font-sans text-sm font-normal leading-normal h-20 text-gray-700 antialiased opacity-75">
                     {val.description}
                   </p>
                 </div>
