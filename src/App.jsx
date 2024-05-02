@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Weather from "./components/Weather/Weather.jsx";
+import CustomHook from "./components/CustomHook/CustomHook.jsx";
 
 // ! component's
 // import TreeView from "./components/Tree-view/TreeView.jsx";
@@ -37,7 +38,9 @@ function App() {
 
         {/* <Search /> */}
 
-        <Weather />
+        {/* <Weather /> */}
+
+        {/* <CustomHook /> */}
       </div>
     </>
   );

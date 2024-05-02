@@ -3,13 +3,15 @@ import { FiSun } from "react-icons/fi";
 import { HiOutlineMoon } from "react-icons/hi";
 
 function DarkMode({ onThemeChange }) {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(
+    () => localStorage.getItem("darkMode") === "true"
+  );
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDark(isDarkMode);
-    document.body.classList.toggle("dark", isDarkMode);
-  }, []);
+    const className = "dark";
+    const bodyClassList = document.body.classList;
+    dark ? bodyClassList.add(className) : bodyClassList.remove(className);
+  }, [dark]);
 
   const darkModeHandler = () => {
     const newDarkValue = !dark;
