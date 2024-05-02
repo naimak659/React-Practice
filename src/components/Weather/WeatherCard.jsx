@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { mImages } from "./IconData";
 
 function WeatherCard({ param = "bangladesh", handleSearch }) {
   const [weatherData, setWeatherData] = useState(null);
@@ -18,7 +19,7 @@ function WeatherCard({ param = "bangladesh", handleSearch }) {
       .then((res) => res.json())
       .then((res) => {
         setWeatherData(res);
-        setIcon(res.weather[0].icon);
+        setIcon(res.weather[0].main);
         setLoading(false);
       })
       .catch((e) => {
@@ -39,6 +40,28 @@ function WeatherCard({ param = "bangladesh", handleSearch }) {
     setTime(localTime.toLocaleDateString("en-US", options));
   }, [weatherData]);
 
+  function icons() {
+    let cusIcon = "";
+    if (icon == "Clouds") {
+      cusIcon = mImages.Clouds;
+    } else if (icon == "Clear") {
+      cusIcon = mImages.Clear;
+    } else if (icon == "Rain") {
+      cusIcon = mImages.Rain;
+    } else if (icon == "Drizzle") {
+      cusIcon = mImages.Drizzle;
+    } else if (icon == "Mist") {
+      cusIcon = mImages.Mist;
+    } else if (icon == "Snow") {
+      cusIcon = mImages.Snow;
+    } else if (icon == "Wind") {
+      cusIcon = mImages.Wind;
+    } else if (icon == "Haze") {
+      cusIcon = mImages.Haze;
+    }
+    return cusIcon;
+  }
+
   return loading ? (
     <div>Loading ...</div>
   ) : (
@@ -47,12 +70,13 @@ function WeatherCard({ param = "bangladesh", handleSearch }) {
         <div className="shadow-2xl flex flex-col bg-white dark:bg-zinc-900 rounded p-4 w-full max-w-xs ">
           <div className="font-bold text-xl">{weatherData?.name}</div>
           <div className="text-sm text-gray-500 dark:text-zinc-400">{`${time}`}</div>
-          <div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-full text-indigo-400">
-            <img
+          <div className="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-full text-indigo-400 w-24 h-24">
+            {/* <img
               className="select-none"
               src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
               alt={icon}
-            />
+            /> */}
+            {icons()}
           </div>
           <div className="flex flex-row items-center justify-center mt-6">
             <div className="font-medium text-6xl">
